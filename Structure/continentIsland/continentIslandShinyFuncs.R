@@ -72,7 +72,7 @@ server <- function(input,output) {
         10^input$logMig
     })
     pop.size <- eventReactive(input$go,{
-        10^input$logN
+        round(10^input$logN,0)
     })
     sims <- eventReactive(input$go,{
         wfBinomWMig(N=pop.size(), ngens=input$ngens, reps=input$reps, pCont=input$pCont,pIsle=input$pIsle,m=mig.rate())
